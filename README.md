@@ -14,8 +14,6 @@ Duolingo leverages a structured database system to handle large amounts of user 
 
 ## Folder Structure
 The project repository is organized as follows:
-- **/docs**: Contains documentation related to the database model and research notes.
-- **/src**: The source files for database scripts and models.
 - **/Project-Catch-Up-1**: [Link to folder](./Project-Catch-Up-1)  
   This folder includes catch-up material and work updates related to the project’s ongoing development.
 
