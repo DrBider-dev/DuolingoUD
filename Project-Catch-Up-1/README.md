@@ -37,6 +37,3 @@ At this stage, the structure of the data within the database is meticulously def
 ## Next Steps
 - **Implementation**: Create the schema in a database management system.
 - **Testing and Adjustments**: Test the database with sample data to validate the integrity and efficiency of the model.
-
-
-YO SOY MARLON GOAT :3
