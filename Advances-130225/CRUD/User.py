@@ -59,7 +59,7 @@ class User:
         query = """
             SELECT id_PK, name, nickname, joinDate, division_FK, timesInTop, email, courses_FK, achievements_FK, followed, followers, gemsNumber, livesNumber, boostersNumber, isPremium 
             FROM User
-            WHERE name = %s
+            WHERE LOWER(name) LIKE LOWER(%s)
         """
         values = (f'%{name}%',)
         return self.db_connection.get_many(query, values)
