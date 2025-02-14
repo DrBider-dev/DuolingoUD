@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS Progress (
 );
 
 -- Tablas de relación (N:M)
-CREATE TABLE IF NOT EXISTS User_Course (
+CREATE TABLE IF NOT EXISTS UserCourse (
     id_PK INT PRIMARY KEY AUTO_INCREMENT,
     User_FK INT,
     Course_FK INT,
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS User_Course (
     FOREIGN KEY (Course_FK) REFERENCES Course(id_PK)
 );
 
-CREATE TABLE IF NOT EXISTS User_Question (
+CREATE TABLE IF NOT EXISTS UserQuestion (
     id_PK INT PRIMARY KEY AUTO_INCREMENT,
     User_FK INT,
     Question_FK INT,
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS User_Question (
     FOREIGN KEY (Question_FK) REFERENCES Question(id_PK)
 );
 
-CREATE TABLE IF NOT EXISTS User_Boosters (
+CREATE TABLE IF NOT EXISTS UserBoosters (
     id_PK INT PRIMARY KEY AUTO_INCREMENT,
     User_FK INT,
     Boosters_FK INT,
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS User_Boosters (
     FOREIGN KEY (Boosters_FK) REFERENCES Boosters(id_PK)
 );
 
-CREATE TABLE IF NOT EXISTS User_Achievement (
+CREATE TABLE IF NOT EXISTS UserAchievement (
     id_PK INT PRIMARY KEY AUTO_INCREMENT,
     User_FK INT,
     Achievement_FK INT,
@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS User_Achievement (
     FOREIGN KEY (Achievement_FK) REFERENCES Achievement(id_PK)
 );
 
-CREATE TABLE IF NOT EXISTS Course_Achievement (
+CREATE TABLE IF NOT EXISTS CourseAchievement (
     id_PK INT PRIMARY KEY AUTO_INCREMENT,
     Course_FK INT,
     Achievement_FK INT,
@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS Course_Achievement (
     FOREIGN KEY (Achievement_FK) REFERENCES Achievement(id_PK)
 );
 
-CREATE TABLE IF NOT EXISTS Lesson_Boosters (
+CREATE TABLE IF NOT EXISTS LessonBoosters (
     id_PK INT PRIMARY KEY AUTO_INCREMENT,
     Lesson_FK INT,
     Boosters_FK INT,
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS Lesson_Boosters (
     FOREIGN KEY (Boosters_FK) REFERENCES Boosters(id_PK)
 );
 
-CREATE TABLE IF NOT EXISTS Challenges_Boosters (
+CREATE TABLE IF NOT EXISTS ChallengesBoosters (
     id_PK INT PRIMARY KEY AUTO_INCREMENT,
     Challenges_FK INT,
     Boosters_FK INT,
@@ -169,7 +169,7 @@ CREATE TABLE IF NOT EXISTS Challenges_Boosters (
     FOREIGN KEY (Boosters_FK) REFERENCES Boosters(id_PK)
 );
 
-CREATE TABLE IF NOT EXISTS Challenges_Achievement (
+CREATE TABLE IF NOT EXISTS ChallengesAchievement (
     id_PK INT PRIMARY KEY AUTO_INCREMENT,
     Challenges_FK INT,
     Achievement_FK INT,
