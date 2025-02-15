@@ -32,7 +32,7 @@ To set up and run the project locally, follow these steps:
 ### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/DrBider-dev/DuolingoUD.git
-cd DuolingoDB
+cd DuolingoDB/src
 ```
 
 ### 2️⃣ Install the dependencies
