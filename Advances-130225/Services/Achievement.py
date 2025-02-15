@@ -9,7 +9,7 @@ router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.
 db_connection = MySQLDatabaseConnection()
-stadiums_crud = AchievementDAO(db_connection)
+Achievement_crud = Achievement(db_connection)
 
 
 @router.get("/Achievements/get_all", response_model=List[AchievementDAO])
@@ -22,7 +22,7 @@ def get_all_Achievements():
 @router.get("/Achievements/get_by_id/{id_Achievement}", response_model=AchievementDAO)
 def get_Achievement_by_id(id_Achievement: int):
  
-    Achievement = Achievement.get_by_id(id_Achievement)
+    Achievement = Achievement_crud.get_by_id(id_Achievement)
     if not Achievement:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="Stadium not found"
@@ -33,29 +33,29 @@ def get_Achievement_by_id(id_Achievement: int):
 @router.post("/Achievements/create", response_model=int)
 def create_Achievement(data: AchievementDAO):
     
-    Achievement_new = Achievement.create(data)
+    Achievement_new = Achievement_crud.create(data)
     return Achievement_new
 
 
 @router.put("/Achievement/update/{id_Achievement}")
-def update_stadium(id_Achievement: int, data: AchievementDAO):
+def update_Achievement(id_Achievement: int, data: AchievementDAO):
     
     try:
-        Achievement.update(Achievement, data)
+        Achievement_crud.update(id_Achievement, data)
         return {"detail": "Achievement updated successfully"}
     except Exception as e:
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST, detail="Could not update stadium"
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Could not update Achuevement"
         ) from e
 
 
-@router.delete("/stadiums/delete/{id_stadium}")
-def delete_stadium(id_stadium: int):
+@router.delete("/Achievements/delete/{id_Achievement}")
+def delete_Achievement(id_Achievement: int):
     
     try:
-        stadiums_crud.delete(id_stadium)
-        return {"detail": "Stadium deleted successfully"}
+        Achievement_crud.delete(id_Achievement)
+        return {"detail": "Achievement deleted successfully"}
     except Exception as e:
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST, detail="Could not delete stadium"
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Could not delete Achievement"
         ) from e
