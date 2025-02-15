@@ -1,5 +1,5 @@
 from typing import List
-from Connections import DatabaseConnection
+from Connections.MySql_Connection import MySQLDatabaseConnection
 from Dao import SectionDAO
 
 
@@ -27,7 +27,7 @@ class Section:
         Retrieves sections from the database that match the given name.
     """
 
-    def __init__(self, db_connection: DatabaseConnection):
+    def __init__(self, db_connection: MySQLDatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()
 

@@ -1,5 +1,5 @@
 from typing import List
-from Connections import DatabaseConnection
+from Connections.MySql_Connection import MySQLDatabaseConnection
 from Dao import QuestionDAO
 
 
@@ -29,7 +29,7 @@ class Question:
         Retrieves questions from the Question table based on the provided question type.
     """
 
-    def __init__(self, db_connection: DatabaseConnection):
+    def __init__(self, db_connection: MySQLDatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()
 

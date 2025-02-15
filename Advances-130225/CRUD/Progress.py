@@ -1,5 +1,4 @@
-from typing import List
-from Connections import DatabaseConnection
+from Connections.MySql_Connection import MySQLDatabaseConnection
 from Dao import ProgressDAO
 
 
@@ -35,7 +34,7 @@ class Progress:
                 ProgressDAO: The data of the retrieved record.
     """
 
-    def __init__(self, db_connection: DatabaseConnection):
+    def __init__(self, db_connection: MySQLDatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()
 
