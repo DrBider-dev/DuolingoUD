@@ -1,7 +1,7 @@
 from typing import List
 from fastapi import APIRouter, HTTPException, status
 
-from Connections import DatabaseConnection
+from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import ChallengesBoosters
 from Dao import ChallengesBoostersDAO
 
@@ -24,7 +24,7 @@ Raises:
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.
-db_connection = DatabaseConnection()
+db_connection = MySQLDatabaseConnection()
 challenges_boosters_crud = ChallengesBoosters(db_connection)
 
 

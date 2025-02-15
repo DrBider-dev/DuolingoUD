@@ -1,7 +1,7 @@
 from typing import List
 from fastapi import APIRouter, HTTPException, status
 
-from Connections import DatabaseConnection
+from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import Progress
 from Dao import ProgressDAO
 
@@ -21,7 +21,7 @@ Dependencies:
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.
-db_connection = DatabaseConnection()
+db_connection = MySQLDatabaseConnection()
 progress_crud = Progress(db_connection)
 
 @router.get("/Progress/get_by_id/{id_Progress}", response_model=ProgressDAO)

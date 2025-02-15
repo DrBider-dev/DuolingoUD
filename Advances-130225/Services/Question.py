@@ -1,6 +1,6 @@
 from typing import List
 from fastapi import APIRouter, HTTPException, status
-from Connections import DatabaseConnection
+from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import Question
 from Dao import QuestionDAO
 
@@ -22,7 +22,7 @@ Dependencies:
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.
-db_connection = DatabaseConnection()
+db_connection = MySQLDatabaseConnection()
 question_crud = Question(db_connection)
 
 
