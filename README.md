@@ -17,6 +17,7 @@ Duolingo leverages a structured database system to handle large amounts of user 
 
 ## 🛠 Technologies Used
 - **MySQL** - Database Management System
+- **PostgreSQL** - Database Management System
 - **FastAPI** - Web framework for building the API
 - **Uvicorn** - ASGI server for running the API
 - **Python** - Programming language for the backend logic
