@@ -15,7 +15,7 @@ Achievement_crud = Achievement(db_connection)
 @router.get("/Achievements/get_all", response_model=List[AchievementDAO])
 def get_all_Achievements():
    
-    Achievements = Achievement.get_all()
+    Achievements = Achievement_crud.get_all()
     return Achievements
 
 
