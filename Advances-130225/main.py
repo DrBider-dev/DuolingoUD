@@ -26,7 +26,7 @@ from Services import (
 app = FastAPI(
     title="Duolingo API",
     version="0.0.1",
-    description="This is an example of a CRUD using services for a football tournament.",
+    description="This is an example of a CRUD using services for Duolingo.",
 )
 
 app.include_router(Achievement_router)
@@ -54,12 +54,14 @@ app.include_router(UserQuestion_router)
 @app.get("/")
 async def root():
     """This method is used to get the root of the API."""
-    return {"message": "Welcome to the Football API!"}
+    return {"message": "Welcome to the Duolingo API!"}
 
 
 @app.get("/tournament/init_data")
 def init_data():
-    """This method is used to initialize the tournament data."""
+    """This method is used to initialize data."""
+    from Initialization.Init_Users import InitUsers
+    InitUsers().create_users(3)
     try:
         import uvicorn
         uvicorn.run(app, host="0.0.0.0", port=8000)

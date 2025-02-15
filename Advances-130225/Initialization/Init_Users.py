@@ -10,7 +10,7 @@ Author: Carlos Andres Sierra <cavirguezs@udistrital.edu.co>
 
 from faker import Faker
 
-from Connections import DatabaseConnection
+from Connections.MySql_Connection import MySQLDatabaseConnection
 from Dao import UserDAO
 from CRUD.User import User
 
@@ -18,9 +18,9 @@ from CRUD.User import User
 
 class InitUsers:
 
-    def __init__(self, conn: DatabaseConnection):
+    def __init__(self):
 
-        self.conn = conn
+        self.conn = MySQLDatabaseConnection()
 
     def create_users(self, n: int) -> bool:
 
