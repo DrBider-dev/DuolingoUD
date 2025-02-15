@@ -12,6 +12,7 @@ from .Progress import router as Progress_router
 from .Question import router as Question_router
 from .Section import router as Section_router
 from .Stage import router as Stage_router
+from .User import router as User_router
 from .UserAchievement import router as UserAchievement_router
 from .UserBoosters import router as UserBoosters_router
 from .UserCourse import router as UserCourse_router
