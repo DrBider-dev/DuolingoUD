@@ -13,7 +13,6 @@ Routes:
     - POST /Challenges/create: Create a new challenge.
     - PUT /Challenges/update/{id_Challenge}: Update an existing challenge by its ID.
     - DELETE /Challenges/delete/{id_Challenge}: Delete a challenge by its ID.
-    - GET /Challenges/get_by_name/{name}: Retrieve a challenge by its name.
 Dependencies:
     - MySQLDatabaseConnection: Manages the connection to the MySQL database.
     - Challenges: CRUD operations for challenges.
@@ -76,12 +75,3 @@ def delete_Challenge(id_Challenge: int):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Could not delete Challenge"
         ) from e
-
-@router.get("/Challenges/get_by_name/{name}", response_model=ChallengesDAO)
-def get_Challenge_by_name(name: str):
-    challenge = challenges_crud.get_by_name(name)
-    if not challenge:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Challenge not found"
-        )
-    return challenge
