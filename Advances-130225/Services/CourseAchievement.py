@@ -5,6 +5,22 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import CourseAchievement
 from Dao import CourseAchievementDAO
 
+"""
+This module defines the FastAPI routes for managing CourseAchievements.
+Routes:
+    - GET /CourseAchievements/get_all: Retrieve all CourseAchievements.
+    - GET /CourseAchievements/get_by_id/{id_CourseAchievement}: Retrieve a CourseAchievement by its ID.
+    - POST /CourseAchievements/create: Create a new CourseAchievement.
+    - PUT /CourseAchievements/update/{id_CourseAchievement}: Update an existing CourseAchievement by its ID.
+    - DELETE /CourseAchievements/delete/{id_CourseAchievement}: Delete a CourseAchievement by its ID.
+Dependencies:
+    - MySQLDatabaseConnection: A class to manage MySQL database connections.
+    - CourseAchievement: A CRUD class for CourseAchievement operations.
+    - CourseAchievementDAO: A Data Access Object class for CourseAchievement.
+Raises:
+    - HTTPException: If a CourseAchievement is not found or if an operation fails.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

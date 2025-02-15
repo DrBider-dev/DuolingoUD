@@ -5,6 +5,22 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import ChallengesBoosters
 from Dao import ChallengesBoostersDAO
 
+"""
+This module defines the FastAPI routes for managing ChallengesBoosters.
+Routes:
+    - GET /ChallengesBoosters/get_all: Retrieve all ChallengesBoosters.
+    - GET /ChallengesBoosters/get_by_id/{id_ChallengesBoosters}: Retrieve a specific ChallengesBoosters by ID.
+    - POST /ChallengesBoosters/create: Create a new ChallengesBoosters.
+    - PUT /ChallengesBoosters/update/{id_ChallengesBoosters}: Update an existing ChallengesBoosters by ID.
+    - DELETE /ChallengesBoosters/delete/{id_ChallengesBoosters}: Delete a specific ChallengesBoosters by ID.
+Dependencies:
+    - MySQLDatabaseConnection: Manages the connection to the MySQL database.
+    - ChallengesBoosters: CRUD operations for ChallengesBoosters.
+    - ChallengesBoostersDAO: Data Access Object for ChallengesBoosters.
+Raises:
+    - HTTPException: If the requested ChallengesBoosters is not found or if there is an error during creation, update, or deletion.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

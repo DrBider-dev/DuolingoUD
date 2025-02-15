@@ -5,6 +5,21 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import Section
 from Dao import SectionDAO
 
+"""
+This module defines the FastAPI routes for managing Sections.
+Routes:
+    - GET /Sections/get_all: Retrieve all sections.
+    - GET /Sections/get_by_id/{id_Section}: Retrieve a section by its ID.
+    - POST /Sections/create: Create a new section.
+    - PUT /Sections/update/{id_Section}: Update an existing section by its ID.
+    - DELETE /Sections/delete/{id_Section}: Delete a section by its ID.
+    - GET /Sections/get_by_name/{name}: Retrieve sections by their name.
+Dependencies:
+    - MySQLDatabaseConnection: Manages the database connection.
+    - Section: CRUD operations for sections.
+    - SectionDAO: Data Access Object for sections.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

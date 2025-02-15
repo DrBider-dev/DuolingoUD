@@ -5,6 +5,24 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import LessonBoosters
 from Dao import LessonBoostersDAO
 
+"""
+This module defines the FastAPI routes for managing LessonBoosters.
+Routes:
+    - GET /LessonBoosters/get_all: Retrieve all LessonBoosters.
+    - GET /LessonBoosters/get_by_id/{id_LessonBoosters}: Retrieve a specific LessonBooster by its ID.
+    - POST /LessonBoosters/create: Create a new LessonBooster.
+    - PUT /LessonBoosters/update/{id_LessonBoosters}: Update an existing LessonBooster by its ID.
+    - DELETE /LessonBoosters/delete/{id_LessonBoosters}: Delete a specific LessonBooster by its ID.
+Dependencies:
+    - fastapi.APIRouter: For creating route handlers.
+    - fastapi.HTTPException: For raising HTTP exceptions.
+    - fastapi.status: For HTTP status codes.
+    - typing.List: For type hinting.
+    - Connections.MySql_Connection.MySQLDatabaseConnection: For database connection.
+    - CRUD.LessonBoosters: For CRUD operations on LessonBoosters.
+    - Dao.LessonBoostersDAO: For data access object of LessonBoosters.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

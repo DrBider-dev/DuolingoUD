@@ -5,6 +5,28 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import ChallengesAchievement
 from Dao import ChallengesAchievementDAO
 
+"""
+This module defines the FastAPI routes for managing ChallengesAchievement entities.
+Routes:
+    - GET /ChallengesAchievement/get_all: Retrieve all ChallengesAchievement records.
+    - GET /ChallengesAchievement/get_by_id/{id_ChallengesAchievement}: Retrieve a specific ChallengesAchievement by its ID.
+    - POST /ChallengesAchievement/create: Create a new ChallengesAchievement record.
+    - PUT /ChallengesAchievement/update/{id_ChallengesAchievement}: Update an existing ChallengesAchievement record by its ID.
+    - DELETE /ChallengesAchievement/delete/{id_ChallengesAchievement}: Delete a specific ChallengesAchievement by its ID.
+Dependencies:
+    - fastapi.APIRouter: For creating route handlers.
+    - fastapi.HTTPException: For raising HTTP exceptions.
+    - fastapi.status: For HTTP status codes.
+    - typing.List: For type hinting.
+    - Connections.MySql_Connection.MySQLDatabaseConnection: For database connection.
+    - CRUD.ChallengesAchievement: For CRUD operations on ChallengesAchievement.
+    - Dao.ChallengesAchievementDAO: Data Access Object for ChallengesAchievement.
+Attributes:
+    router (APIRouter): The FastAPI router instance for defining routes.
+    db_connection (MySQLDatabaseConnection): The database connection instance.
+    challenges_achievement_crud (ChallengesAchievement): The CRUD instance for ChallengesAchievement operations.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

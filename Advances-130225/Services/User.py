@@ -5,6 +5,25 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import User
 from Dao import UserDAO
 
+"""
+This module defines the User-related API endpoints using FastAPI.
+Endpoints:
+- GET /Users/get_all: Retrieve all users.
+- GET /Users/get_by_id/{id_User}: Retrieve a user by their ID.
+- POST /Users/create: Create a new user.
+- PUT /Users/update/{id_User}: Update an existing user by their ID.
+- DELETE /Users/delete/{id_User}: Delete a user by their ID.
+- GET /Users/get_by_name/{name}: Retrieve users by their name.
+- GET /Users/get_by_email/{email}: Retrieve users by their email.
+- GET /Users/get_by_nickname/{nickname}: Retrieve users by their nickname.
+Dependencies:
+- MySQLDatabaseConnection: Manages the connection to the MySQL database.
+- User: CRUD operations for the User entity.
+- UserDAO: Data Access Object for the User entity.
+Raises:
+- HTTPException: If a user is not found or if there is an error during creation, update, or deletion.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

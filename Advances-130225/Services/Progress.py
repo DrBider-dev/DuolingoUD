@@ -5,6 +5,19 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import Progress
 from Dao import ProgressDAO
 
+"""
+This module defines the FastAPI routes for managing Progress entities.
+Routes:
+    - GET /Progress/get_by_id/{id_Progress}: Retrieve a Progress entity by its ID.
+    - POST /Progress/create: Create a new Progress entity.
+    - PUT /Progress/update/{id_Progress}: Update an existing Progress entity by its ID.
+    - DELETE /Progress/delete/{id_Progress}: Delete a Progress entity by its ID.
+Dependencies:
+    - MySQLDatabaseConnection: Manages the connection to the MySQL database.
+    - Progress: CRUD operations for Progress entities.
+    - ProgressDAO: Data Access Object for Progress entities.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

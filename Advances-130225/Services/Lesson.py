@@ -5,6 +5,22 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import Lesson
 from Dao import LessonDAO
 
+"""
+This module defines the FastAPI routes for managing Lessons.
+Routes:
+    - GET /Lessons/get_all: Retrieve all lessons.
+    - GET /Lessons/get_by_id/{id_Lesson}: Retrieve a lesson by its ID.
+    - POST /Lessons/create: Create a new lesson.
+    - PUT /Lessons/update/{id_Lesson}: Update an existing lesson by its ID.
+    - DELETE /Lessons/delete/{id_Lesson}: Delete a lesson by its ID.
+Dependencies:
+    - MySQLDatabaseConnection: Manages the connection to the MySQL database.
+    - Lesson: CRUD operations for lessons.
+    - LessonDAO: Data Access Object for lesson data transfer.
+Raises:
+    - HTTPException: If a lesson is not found or if there is an error during update or delete operations.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

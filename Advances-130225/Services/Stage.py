@@ -5,6 +5,21 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import Stage
 from Dao import StageDAO
 
+"""
+This module defines the FastAPI routes for managing Stages.
+Routes:
+    - GET /Stages/get_all: Retrieve all stages.
+    - GET /Stages/get_by_id/{id_Stage}: Retrieve a stage by its ID.
+    - POST /Stages/create: Create a new stage.
+    - PUT /Stages/update/{id_Stage}: Update an existing stage by its ID.
+    - DELETE /Stages/delete/{id_Stage}: Delete a stage by its ID.
+    - GET /Stages/get_by_level/{level}: Retrieve stages by their level.
+Dependencies:
+    - MySQLDatabaseConnection: Manages the connection to the MySQL database.
+    - Stage: CRUD operations for the Stage entity.
+    - StageDAO: Data Access Object for the Stage entity.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

@@ -1,9 +1,38 @@
 from typing import List
+
 from fastapi import APIRouter, HTTPException, status
 
 from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import Achievement
 from Dao import AchievementDAO
+
+"""
+Achievement API Endpoints
+This module provides API endpoints for managing Achievements using FastAPI.
+It includes endpoints for retrieving, creating, updating, and deleting Achievements.
+Endpoints:
+    - GET /Achievements/get_all: Retrieve all Achievements.
+    - GET /Achievements/get_by_id/{id_Achievement}: Retrieve an Achievement by its ID.
+    - POST /Achievements/create: Create a new Achievement.
+    - PUT /Achievement/update/{id_Achievement}: Update an existing Achievement by its ID.
+    - DELETE /Achievements/delete/{id_Achievement}: Delete an Achievement by its ID.
+Dependencies:
+    - fastapi: FastAPI framework for building APIs.
+    - typing: For type hinting.
+    - Connections.MySql_Connection: Module for MySQL database connection.
+    - CRUD: Module for CRUD operations on Achievements.
+    - Dao: Data Access Object for Achievements.
+Classes:
+    - MySQLDatabaseConnection: Manages the MySQL database connection.
+    - Achievement: Provides CRUD operations for Achievements.
+    - AchievementDAO: Data Access Object for Achievements.
+Functions:
+    - get_all_Achievements: Retrieve all Achievements.
+    - get_Achievement_by_id: Retrieve an Achievement by its ID.
+    - create_Achievement: Create a new Achievement.
+    - update_Achievement: Update an existing Achievement by its ID.
+    - delete_Achievement: Delete an Achievement by its ID.
+"""
 
 router = APIRouter()
 

@@ -5,6 +5,22 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import UserBoosters
 from Dao import UserBoostersDAO
 
+"""
+This module defines the FastAPI routes for managing UserBoosters.
+Routes:
+    - GET /UserBoosters/get_all: Retrieve all UserBoosters.
+    - GET /UserBoosters/get_by_id/{id_UserBoosters}: Retrieve a UserBooster by its ID.
+    - POST /UserBoosters/create: Create a new UserBooster.
+    - PUT /UserBoosters/update/{id_UserBoosters}: Update an existing UserBooster by its ID.
+    - DELETE /UserBoosters/delete/{id_UserBoosters}: Delete a UserBooster by its ID.
+Dependencies:
+    - MySQLDatabaseConnection: Manages the connection to the MySQL database.
+    - UserBoosters: CRUD operations for UserBoosters.
+    - UserBoostersDAO: Data Access Object for UserBoosters.
+Exceptions:
+    - HTTPException: Raised when a UserBooster is not found or when an operation fails.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

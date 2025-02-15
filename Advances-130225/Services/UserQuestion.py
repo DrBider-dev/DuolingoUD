@@ -5,6 +5,20 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import UserQuestion
 from Dao import UserQuestionDAO
 
+"""
+This module provides API endpoints for managing UserQuestions.
+Endpoints:
+- GET /UserQuestions/get_all: Retrieve all UserQuestions.
+- GET /UserQuestions/get_by_id/{id_UserQuestion}: Retrieve a UserQuestion by its ID.
+- POST /UserQuestions/create: Create a new UserQuestion.
+- PUT /UserQuestions/update/{id_UserQuestion}: Update an existing UserQuestion by its ID.
+- DELETE /UserQuestions/delete/{id_UserQuestion}: Delete a UserQuestion by its ID.
+Dependencies:
+- MySQLDatabaseConnection: Manages the connection to the MySQL database.
+- UserQuestion: CRUD operations for UserQuestions.
+- UserQuestionDAO: Data Access Object for UserQuestions.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

@@ -5,6 +5,27 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import UserAchievement
 from Dao import UserAchievementDAO
 
+"""
+This module defines the FastAPI routes for managing UserAchievements.
+Routes:
+    - GET /UserAchievements/get_all: Retrieve all UserAchievements.
+    - GET /UserAchievements/get_by_id/{id_UserAchievement}: Retrieve a UserAchievement by its ID.
+    - POST /UserAchievements/create: Create a new UserAchievement.
+    - PUT /UserAchievements/update/{id_UserAchievement}: Update an existing UserAchievement by its ID.
+    - DELETE /UserAchievements/delete/{id_UserAchievement}: Delete a UserAchievement by its ID.
+Dependencies:
+    - fastapi.APIRouter: For creating route handlers.
+    - fastapi.HTTPException: For raising HTTP exceptions.
+    - fastapi.status: For HTTP status codes.
+    - typing.List: For type hinting lists.
+    - Connections.MySql_Connection.MySQLDatabaseConnection: For MySQL database connection.
+    - CRUD.UserAchievement: For CRUD operations on UserAchievements.
+    - Dao.UserAchievementDAO: For data access object representing UserAchievement.
+Initialization:
+    - Initializes MySQL database connection.
+    - Initializes UserAchievement CRUD operations with the database connection.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

@@ -5,6 +5,21 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import Division
 from Dao import DivisionDAO
 
+"""
+This module provides API endpoints for managing Divisions using FastAPI.
+Endpoints:
+- GET /Divisions/get_all: Retrieve all divisions.
+- GET /Divisions/get_by_id/{id_Division}: Retrieve a division by its ID.
+- POST /Divisions/create: Create a new division.
+- PUT /Divisions/update/{id_Division}: Update an existing division by its ID.
+- DELETE /Divisions/delete/{id_Division}: Delete a division by its ID.
+- GET /Divisions/get_by_name/{name}: Retrieve divisions by their name.
+Dependencies:
+- MySQLDatabaseConnection: Handles the connection to the MySQL database.
+- Division: CRUD operations for the Division entity.
+- DivisionDAO: Data Access Object for the Division entity.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

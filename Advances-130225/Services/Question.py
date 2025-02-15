@@ -5,6 +5,21 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import Question
 from Dao import QuestionDAO
 
+"""
+This module defines the FastAPI routes for managing Questions.
+Routes:
+    - GET /Questions/get_all: Retrieve all questions.
+    - GET /Questions/get_by_id/{id_Question}: Retrieve a question by its ID.
+    - POST /Questions/create: Create a new question.
+    - PUT /Questions/update/{id_Question}: Update an existing question by its ID.
+    - DELETE /Questions/delete/{id_Question}: Delete a question by its ID.
+    - GET /Questions/get_by_type/{type}: Retrieve questions by their type.
+Dependencies:
+    - MySQLDatabaseConnection: Manages the connection to the MySQL database.
+    - Question: CRUD operations for questions.
+    - QuestionDAO: Data Access Object for questions.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.

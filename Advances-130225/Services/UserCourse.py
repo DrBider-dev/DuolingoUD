@@ -5,6 +5,34 @@ from Connections.MySql_Connection import MySQLDatabaseConnection
 from CRUD import UserCourse
 from Dao import UserCourseDAO
 
+"""
+This module defines the API routes for managing UserCourses.
+Routes:
+    - GET /UserCourses/get_all: Retrieve all UserCourses.
+    - GET /UserCourses/get_by_id/{id_UserCourse}: Retrieve a UserCourse by its ID.
+    - POST /UserCourses/create: Create a new UserCourse.
+    - PUT /UserCourses/update/{id_UserCourse}: Update an existing UserCourse by its ID.
+    - DELETE /UserCourses/delete/{id_UserCourse}: Delete a UserCourse by its ID.
+Dependencies:
+    - fastapi.APIRouter: For creating API routes.
+    - fastapi.HTTPException: For raising HTTP exceptions.
+    - fastapi.status: For HTTP status codes.
+    - typing.List: For type hinting.
+    - Connections.MySql_Connection.MySQLDatabaseConnection: For MySQL database connection.
+    - CRUD.UserCourse: For CRUD operations on UserCourses.
+    - Dao.UserCourseDAO: Data Access Object for UserCourse.
+Attributes:
+    router (APIRouter): The API router for UserCourse routes.
+    db_connection (MySQLDatabaseConnection): The MySQL database connection.
+    user_course_crud (UserCourse): The CRUD class for UserCourses.
+Functions:
+    - get_all_UserCourses(): Retrieve all UserCourses.
+    - get_UserCourse_by_id(id_UserCourse: int): Retrieve a UserCourse by its ID.
+    - create_UserCourse(data: UserCourseDAO): Create a new UserCourse.
+    - update_UserCourse(id_UserCourse: int, data: UserCourseDAO): Update an existing UserCourse by its ID.
+    - delete_UserCourse(id_UserCourse: int): Delete a UserCourse by its ID.
+"""
+
 router = APIRouter()
 
 # Initialize MySQL DB connection and CRUD class.
