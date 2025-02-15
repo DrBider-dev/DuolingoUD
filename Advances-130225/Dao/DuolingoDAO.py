@@ -37,7 +37,7 @@ class AchievementDAO(ProjectDAO):
 
     id_PK: int = -1
     name: str
-    progressPercentage: float
+    progresspercentage: float
     goal: str
 
 class LessonDAO(ProjectDAO):
