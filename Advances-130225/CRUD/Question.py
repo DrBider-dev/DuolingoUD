@@ -79,12 +79,12 @@ class Question:
         """
         return self.db_connection.get_many(query)
     
-    def get_by_type(self, name: str) -> List[QuestionDAO]:
+    def get_by_type(self, type: str) -> List[QuestionDAO]:
                     
         query = """
             SELECT id_PK, content, answer, isCorrect, question_type
             FROM Question
             WHERE question_type = %s;
         """
-        values = (name,)
+        values = (type,)
         return self.db_connection.get_many(query, values)

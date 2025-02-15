@@ -63,7 +63,7 @@ class Achievement:
             FROM Achievement
             WHERE id_PK = %s;
         """
-        values = (id_PK)
+        values = (id_PK,)
         return self.db_connection.get_one(query, values)
 
     def get_all(self) -> List[AchievementDAO]:
