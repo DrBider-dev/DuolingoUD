@@ -4,6 +4,27 @@ from Dao import CourseDAO
 
 
 class Course:
+    
+    """
+    Course class to handle CRUD operations for the Course table in the database.
+    Attributes:
+        db_connection (DatabaseConnection): The database connection object.
+    Methods:
+        __init__(db_connection: DatabaseConnection):
+            Initializes the Course object with a database connection and connects to the database.
+        create(data: CourseDAO) -> int:
+            Inserts a new course record into the Course table.
+        update(id_PK: int, data: CourseDAO):
+            Updates an existing course record in the Course table based on the provided primary key.
+        delete(id_PK: int):
+            Deletes a course record from the Course table based on the provided primary key.
+        get_by_id(id_PK: int) -> CourseDAO:
+            Retrieves a course record from the Course table based on the provided primary key.
+        get_all() -> List[CourseDAO]:
+            Retrieves all course records from the Course table.
+        get_by_language(language: str) -> List[CourseDAO]:
+            Retrieves course records from the Course table where the language matches the provided string.
+    """
 
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection

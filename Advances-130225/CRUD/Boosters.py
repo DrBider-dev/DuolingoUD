@@ -4,7 +4,27 @@ from Dao import BoostersDAO
 
 
 class Boosters:
-
+    """
+    A class to manage CRUD operations for Boosters in the database.
+    Attributes:
+    db_connection (DatabaseConnection): The database connection object.
+    Methods:
+    __init__(db_connection: DatabaseConnection):
+        Initializes the Boosters class with a database connection and connects to the database.
+    create(data: BoostersDAO) -> int:
+        Inserts a new booster record into the database.
+    update(id_PK: int, data: BoostersDAO):
+        Updates an existing booster record in the database by its primary key.
+    delete(id_PK: int):
+        Deletes a booster record from the database by its primary key.
+    get_by_id(id_PK: int) -> BoostersDAO:
+        Retrieves a booster record from the database by its primary key.
+    get_all() -> List[BoostersDAO]:
+        Retrieves all booster records from the database.
+    get_by_name(name: str) -> List[BoostersDAO]:
+        Retrieves booster records from the database that match the given name.
+    """
+    
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()

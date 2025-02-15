@@ -5,6 +5,36 @@ from Dao import ProgressDAO
 
 class Progress:
 
+    """
+    The Progress class provides CRUD operations for the Progress table in the database.
+    Attributes:
+        db_connection (DatabaseConnection): The database connection object.
+    Methods:
+        __init__(db_connection: DatabaseConnection):
+            Initializes the Progress class with a database connection and connects to the database.
+        create(data: ProgressDAO) -> int:
+            Inserts a new record into the Progress table.
+            Args:
+                data (ProgressDAO): The data to be inserted.
+            Returns:
+                int: The ID of the newly created record.
+        update(id_PK: int, data: ProgressDAO):
+            Updates an existing record in the Progress table.
+            Args:
+                id_PK (int): The primary key of the record to be updated.
+                data (ProgressDAO): The new data for the record.
+        delete(id_PK: int):
+            Deletes a record from the Progress table.
+            Args:
+                id_PK (int): The primary key of the record to be deleted.
+        get_by_id(id_PK: int) -> ProgressDAO:
+            Retrieves a record from the Progress table by its primary key.
+            Args:
+                id_PK (int): The primary key of the record to be retrieved.
+            Returns:
+                ProgressDAO: The data of the retrieved record.
+    """
+
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()

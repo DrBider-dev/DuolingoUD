@@ -5,6 +5,34 @@ from Dao import UserDAO
 
 class User:
 
+    """
+    A class used to represent a User and perform CRUD operations on the User table in the database.
+    Attributes
+    ----------
+    db_connection : DatabaseConnection
+        A connection to the database.
+    Methods
+    -------
+    __init__(db_connection: DatabaseConnection)
+        Initializes the User object with a database connection.
+    create(data: UserDAO) -> int
+        Inserts a new user record into the database.
+    update(id_PK: int, data: UserDAO)
+        Updates an existing user record in the database.
+    delete(id_PK: int)
+        Deletes a user record from the database.
+    get_by_id(id_PK: int) -> UserDAO
+        Retrieves a user record by its primary key.
+    get_all() -> List[UserDAO]
+        Retrieves all user records from the database.
+    get_by_name(name: str) -> List[UserDAO]
+        Retrieves user records that match the given name.
+    get_by_email(email: str) -> List[UserDAO]
+        Retrieves user records that match the given email.
+    get_by_nickname(nickname: str) -> List[UserDAO]
+        Retrieves user records that match the given nickname.
+    """
+
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()

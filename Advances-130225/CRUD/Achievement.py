@@ -4,7 +4,27 @@ from Dao import AchievementDAO
 
 
 class Achievement:
-
+    """
+        A class used to represent an Achievement in the system.
+    Attributes
+    ----------
+    db_connection : DatabaseConnection
+        An instance of the DatabaseConnection class to interact with the database.
+    Methods
+    -------
+    create(data: AchievementDAO) -> int
+        Inserts a new achievement record into the database.
+    update(id_PK: int, data: AchievementDAO)
+        Updates an existing achievement record in the database.
+    delete(id_PK: int)
+        Deletes an achievement record from the database by its primary key.
+    get_by_id(id_PK: int) -> AchievementDAO
+        Retrieves an achievement record from the database by its primary key.
+    get_all() -> List[AchievementDAO]
+        Retrieves all achievement records from the database.
+    get_by_name(name: str) -> List[AchievementDAO]
+        Retrieves achievement records from the database that match the given name.
+    """
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()

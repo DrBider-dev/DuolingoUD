@@ -5,6 +5,26 @@ from Dao import LessonDAO
 
 class Lesson:
 
+    """
+    A class used to represent a Lesson in the system.
+    Attributes
+    ----------
+    db_connection : DatabaseConnection
+        An instance of the DatabaseConnection class to interact with the database.
+    Methods
+    -------
+    create(data: LessonDAO) -> int
+        Inserts a new lesson record into the database.
+    update(id_PK: int, data: LessonDAO)
+        Updates an existing lesson record in the database.
+    delete(id_PK: int)
+        Deletes a lesson record from the database by its primary key.
+    get_by_id(id_PK: int) -> LessonDAO
+        Retrieves a lesson record from the database by its primary key.
+    get_all() -> List[LessonDAO]
+        Retrieves all lesson records from the database.
+    """
+
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()

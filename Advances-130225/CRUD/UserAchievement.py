@@ -4,6 +4,26 @@ from Dao import UserAchievementDAO
 
 
 class UserAchievement:
+    
+    """
+    A class used to represent User Achievements in the database.
+    Attributes
+    ----------
+    db_connection : DatabaseConnection
+        A connection object to interact with the database.
+    Methods
+    -------
+    create(data: UserAchievementDAO) -> int
+        Inserts a new user achievement record into the database.
+    update(id_PK: int, data: UserAchievementDAO)
+        Updates an existing user achievement record in the database.
+    delete(id_PK: int)
+        Deletes a user achievement record from the database.
+    get_by_id(id_PK: int) -> UserAchievementDAO
+        Retrieves a user achievement record by its primary key.
+    get_all() -> List[UserAchievementDAO]
+        Retrieves all user achievement records from the database.
+    """
 
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection

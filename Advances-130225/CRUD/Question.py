@@ -5,6 +5,30 @@ from Dao import QuestionDAO
 
 class Question:
 
+    """
+    A class to represent CRUD operations for the Question table in the database.
+    Attributes
+    ----------
+    db_connection : DatabaseConnection
+        An instance of the DatabaseConnection class to interact with the database.
+    Methods
+    -------
+    __init__(db_connection: DatabaseConnection):
+        Initializes the Question instance with a database connection and connects to the database.
+    create(data: QuestionDAO) -> int:
+        Inserts a new question into the Question table and returns the ID of the created question.
+    update(id_PK: int, data: QuestionDAO):
+        Updates an existing question in the Question table based on the provided ID.
+    delete(id_PK: int):
+        Deletes a question from the Question table based on the provided ID.
+    get_by_id(id_PK: int) -> QuestionDAO:
+        Retrieves a question from the Question table based on the provided ID.
+    get_all() -> List[QuestionDAO]:
+        Retrieves all questions from the Question table.
+    get_by_type(name: str) -> List[QuestionDAO]:
+        Retrieves questions from the Question table based on the provided question type.
+    """
+
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()

@@ -4,6 +4,24 @@ from Dao import UserBoostersDAO
 
 
 class UserBoosters:
+    
+    """
+    A class used to represent the UserBoosters CRUD operations.
+    Methods
+    -------
+    __init__(db_connection: DatabaseConnection)
+        Initializes the UserBoosters class with a database connection.
+    create(data: UserBoostersDAO) -> int
+        Inserts a new record into the UserBoosters table.
+    update(id_PK: int, data: UserBoostersDAO)
+        Updates an existing record in the UserBoosters table.
+    delete(id_PK: int)
+        Deletes a record from the UserBoosters table by its primary key.
+    get_by_id(id_PK: int) -> UserBoostersDAO
+        Retrieves a record from the UserBoosters table by its primary key.
+    get_all() -> List[UserBoostersDAO]
+        Retrieves all records from the UserBoosters table.
+    """
 
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection

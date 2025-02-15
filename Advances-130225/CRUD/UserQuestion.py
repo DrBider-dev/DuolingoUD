@@ -4,6 +4,28 @@ from Dao import UserQuestionDAO
 
 
 class UserQuestion:
+    
+    """
+    A class used to represent the UserQuestion entity and perform CRUD operations on it.
+    Attributes
+    ----------
+    db_connection : DatabaseConnection
+        An instance of the DatabaseConnection class to interact with the database.
+    Methods
+    -------
+    __init__(db_connection: DatabaseConnection)
+        Initializes the UserQuestion instance with a database connection and connects to the database.
+    create(data: UserQuestionDAO) -> int
+        Inserts a new UserQuestion record into the database and returns the ID of the created record.
+    update(id_PK: int, data: UserQuestionDAO)
+        Updates an existing UserQuestion record in the database based on the provided ID.
+    delete(id_PK: int)
+        Deletes a UserQuestion record from the database based on the provided ID.
+    get_by_id(id_PK: int) -> UserQuestionDAO
+        Retrieves a UserQuestion record from the database based on the provided ID.
+    get_all() -> List[UserQuestionDAO]
+        Retrieves all UserQuestion records from the database.
+    """
 
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection

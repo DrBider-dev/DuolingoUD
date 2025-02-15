@@ -4,6 +4,25 @@ from Dao import LessonBoostersDAO
 
 
 class LessonBoosters:
+    
+    """
+    A class to manage CRUD operations for LessonBoosters in the database.
+    Attributes:
+    db_connection (DatabaseConnection): The database connection object.
+    Methods:
+    __init__(db_connection: DatabaseConnection):
+        Initializes the LessonBoosters object with a database connection.
+    create(data: LessonBoostersDAO) -> int:
+        Inserts a new record into the LessonBoosters table.
+    update(id_PK: int, data: LessonBoostersDAO):
+        Updates an existing record in the LessonBoosters table.
+    delete(id_PK: int):
+        Deletes a record from the LessonBoosters table by its primary key.
+    get_by_id(id_PK: int) -> LessonBoostersDAO:
+        Retrieves a record from the LessonBoosters table by its primary key.
+    get_all() -> List[LessonBoostersDAO]:
+        Retrieves all records from the LessonBoosters table.
+    """
 
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection

@@ -4,6 +4,31 @@ from Dao import ChallengesDAO
 
 
 class Challenges:
+    
+    """
+    A class to represent the CRUD operations for Challenges.
+    Attributes
+    ----------
+    db_connection : DatabaseConnection
+        An instance of the DatabaseConnection class to interact with the database.
+    Methods
+    -------
+    __init__(db_connection: DatabaseConnection)
+        Initializes the Challenges class with a database connection.
+    create(data: ChallengesDAO) -> int
+        Inserts a new challenge into the database and returns the ID of the created challenge.
+    update(id_PK: int, data: ChallengesDAO)
+        Updates an existing challenge in the database based on the provided ID.
+    delete(id_PK: int)
+        Deletes a challenge from the database based on the provided ID.
+    get_by_id(id_PK: int) -> ChallengesDAO
+        Retrieves a challenge from the database based on the provided ID.
+    get_all() -> List[ChallengesDAO]
+        Retrieves all challenges from the database.
+    get_by_name(name: str) -> List[ChallengesDAO]
+        Retrieves challenges from the database that match the provided name.
+    """
+
 
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection

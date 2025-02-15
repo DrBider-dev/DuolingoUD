@@ -4,6 +4,28 @@ from Dao import ChallengesBoostersDAO
 
 
 class ChallengesBoosters:
+    """
+    A class used to represent the ChallengesBoosters operations.
+    ...
+    Attributes
+    ----------
+    db_connection : DatabaseConnection
+        a database connection object to interact with the database
+    Methods
+    -------
+    __init__(db_connection: DatabaseConnection)
+        Initializes the ChallengesBoosters with a database connection.
+    create(data: ChallengesBoostersDAO) -> int
+        Inserts a new record into the ChallengesBoosters table.
+    update(id_PK: int, data: ChallengesBoostersDAO)
+        Updates an existing record in the ChallengesBoosters table.
+    delete(id_PK: int)
+        Deletes a record from the ChallengesBoosters table by its primary key.
+    get_by_id(id_PK: int) -> ChallengesBoostersDAO
+        Retrieves a record from the ChallengesBoosters table by its primary key.
+    get_all() -> List[ChallengesBoostersDAO]
+        Retrieves all records from the ChallengesBoosters table.
+    """
 
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection

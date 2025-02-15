@@ -4,6 +4,27 @@ from Dao import DivisionDAO
 
 
 class Division:
+    
+    """
+    Division class to handle CRUD operations for the Division table in the database.
+    Attributes:
+        db_connection (DatabaseConnection): The database connection object.
+    Methods:
+        __init__(db_connection: DatabaseConnection):
+            Initializes the Division class with a database connection and connects to the database.
+        create(data: DivisionDAO) -> int:
+            Inserts a new record into the Division table.
+        update(id_PK: int, data: DivisionDAO):
+            Updates an existing record in the Division table based on the primary key.
+        delete(id_PK: int):
+            Deletes a record from the Division table based on the primary key.
+        get_by_id(id_PK: int) -> DivisionDAO:
+            Retrieves a record from the Division table based on the primary key.
+        get_all() -> List[DivisionDAO]:
+            Retrieves all records from the Division table.
+        get_by_name(name: str) -> List[DivisionDAO]:
+            Retrieves records from the Division table where the name matches the given string.
+    """
 
     def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
