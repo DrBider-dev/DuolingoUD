@@ -57,15 +57,8 @@ async def root():
     return {"message": "Welcome to the Duolingo API!"}
 
 
-@app.get("/tournament/init_data")
+@app.get("/Duolingo/init_data")
 def init_data():
     """This method is used to initialize data."""
     from Initialization.Init_Users import InitUsers
     InitUsers().create_users(3)
-    try:
-        import uvicorn
-        uvicorn.run(app, host="0.0.0.0", port=8000)
-        
-        return {"message": "Data was created successfully."}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e)) from e
