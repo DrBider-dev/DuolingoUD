@@ -1,5 +1,5 @@
 from typing import List
-from Connections.MySql_Connection import MySQLDatabaseConnection
+from Connections import DatabaseConnection
 from Dao import UserQuestionDAO
 
 
@@ -27,7 +27,7 @@ class UserQuestion:
         Retrieves all UserQuestion records from the database.
     """
 
-    def __init__(self, db_connection: MySQLDatabaseConnection):
+    def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()
 

@@ -1,5 +1,5 @@
 from typing import List
-from Connections.MySql_Connection import MySQLDatabaseConnection
+from Connections import DatabaseConnection
 from Dao import LessonDAO
 
 
@@ -25,7 +25,7 @@ class Lesson:
         Retrieves all lesson records from the database.
     """
 
-    def __init__(self, db_connection: MySQLDatabaseConnection):
+    def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()
 

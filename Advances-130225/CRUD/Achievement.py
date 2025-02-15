@@ -1,5 +1,5 @@
 from typing import List
-from Connections.MySql_Connection import MySQLDatabaseConnection
+from Connections import DatabaseConnection
 from Dao import AchievementDAO
 
 
@@ -25,7 +25,7 @@ class Achievement:
     get_by_name(name: str) -> List[AchievementDAO]
         Retrieves achievement records from the database that match the given name.
     """
-    def __init__(self, db_connection: MySQLDatabaseConnection):
+    def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()
 

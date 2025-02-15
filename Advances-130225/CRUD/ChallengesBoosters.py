@@ -1,5 +1,5 @@
 from typing import List
-from Connections.MySql_Connection import MySQLDatabaseConnection
+from Connections import DatabaseConnection
 from Dao import ChallengesBoostersDAO
 
 
@@ -27,7 +27,7 @@ class ChallengesBoosters:
         Retrieves all records from the ChallengesBoosters table.
     """
 
-    def __init__(self, db_connection: MySQLDatabaseConnection):
+    def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()
 

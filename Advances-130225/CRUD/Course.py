@@ -1,5 +1,5 @@
 from typing import List
-from Connections.MySql_Connection import MySQLDatabaseConnection
+from Connections import DatabaseConnection
 from Dao import CourseDAO
 
 
@@ -26,7 +26,7 @@ class Course:
             Retrieves course records from the Course table where the language matches the provided string.
     """
 
-    def __init__(self, db_connection: MySQLDatabaseConnection):
+    def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()
 

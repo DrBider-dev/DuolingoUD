@@ -1,5 +1,5 @@
 from typing import List
-from Connections.MySql_Connection import MySQLDatabaseConnection
+from Connections import DatabaseConnection
 from Dao import UserCourseDAO
 
 
@@ -27,7 +27,7 @@ class UserCourse:
         Retrieves all records from the UserCourse table and returns them as a list of UserCourseDAO objects.
     """
 
-    def __init__(self, db_connection: MySQLDatabaseConnection):
+    def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()
 

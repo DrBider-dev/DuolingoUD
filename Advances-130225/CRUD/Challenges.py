@@ -1,5 +1,5 @@
 from typing import List
-from Connections.MySql_Connection import MySQLDatabaseConnection
+from Connections import DatabaseConnection
 from Dao import ChallengesDAO
 
 
@@ -25,10 +25,12 @@ class Challenges:
         Retrieves a challenge from the database based on the provided ID.
     get_all() -> List[ChallengesDAO]
         Retrieves all challenges from the database.
+    get_by_name(name: str) -> List[ChallengesDAO]
+        Retrieves challenges from the database that match the provided name.
     """
 
 
-    def __init__(self, db_connection: MySQLDatabaseConnection):
+    def __init__(self, db_connection: DatabaseConnection):
         self.db_connection = db_connection
         self.db_connection.connect()
 
@@ -76,3 +78,13 @@ class Challenges:
             FROM Challenges;
         """
         return self.db_connection.get_many(query)
+
+    def get_by_name(self, name: str) -> List[ChallengesDAO]:
+   
+        query = """
+            SELECT id_PK, description, progress, goal, reward 
+            FROM Challenges;
+            WHERE LOWER(name) LIKE LOWER(%s);
+        """
+        values = (f'%{name}%',)
+        return self.db_connection.get_many(query, values)
